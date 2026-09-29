@@ -1,0 +1,50 @@
+{
+  "model_name": "XGBoost (tuned) + isotonic calibration",
+  "features": [
+    "gender",
+    "height",
+    "weight",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc",
+    "smoke",
+    "alco",
+    "active",
+    "age_years"
+  ],
+  "threshold": 0.38114210963249207,
+  "target_recall": 0.8,
+  "input_ranges": {
+    "age_years": [
+      30,
+      65
+    ],
+    "height": [
+      100,
+      250
+    ],
+    "weight": [
+      30,
+      200
+    ],
+    "ap_hi": [
+      70,
+      250
+    ],
+    "ap_lo": [
+      40,
+      150
+    ]
+  },
+  "training_age_range": [
+    29.6,
+    64.9
+  ],
+  "n_train": 54907,
+  "n_test": 13727,
+  "library_versions": {
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.4.0"
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "test_metrics_percent": [
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 72.92,
+      "Precision": 75.75,
+      "Recall": 66.59,
+      "F1 Score": 70.87,
+      "ROC-AUC": 79.6,
+      "PR-AUC": 77.39
+    },
+    {
+      "Model": "Random Forest",
+      "Accuracy": 73.37,
+      "Precision": 74.4,
+      "Recall": 70.39,
+      "F1 Score": 72.34,
+      "ROC-AUC": 79.61,
+      "PR-AUC": 77.75
+    },
+    {
+      "Model": "XGBoost",
+      "Accuracy": 73.79,
+      "Precision": 75.54,
+      "Recall": 69.53,
+      "F1 Score": 72.41,
+      "ROC-AUC": 80.56,
+      "PR-AUC": 78.53
+    },
+    {
+      "Model": "XGBoost (tuned)",
+      "Accuracy": 73.65,
+      "Precision": 75.72,
+      "Recall": 68.8,
+      "F1 Score": 72.09,
+      "ROC-AUC": 80.63,
+      "PR-AUC": 78.54
+    }
+  ],
+  "cross_validation_percent": [
+    {
+      "Model": "Logistic Regression",
+      "Metric": "Accuracy",
+      "Mean": 72.77588757715992,
+      "Std": 0.35696278943705906
+    },
+    {
+      "Model": "Logistic Regression",
+      "Metric": "Precision",
+      "Mean": 75.4916730881317,
+      "Std": 0.4976499086830826
+    },
+    {
+      "Model": "Logistic Regression",
+      "Metric": "Recall",
+      "Mean": 66.59402149904284,
+      "Std": 0.6186058419963402
+    },
+    {
+      "Model": "Logistic Regression",
+      "Metric": "F1 Score",
+      "Mean": 70.76244453991588,
+      "Std": 0.4142066224819783
+    },
+    {
+      "Model": "Logistic Regression",
+      "Metric": "ROC-AUC",
+      "Mean": 79.1652846043348,
+      "Std": 0.36149495072687493
+    },
+    {
+      "Model": "Logistic Regression",
+      "Metric": "PR-AUC",
+      "Mean": 77.09896618492587,
+      "Std": 0.5312947434962655
+    },
+    {
+      "Model": "Random Forest",
+      "Metric": "Accuracy",
+      "Mean": 72.84581732790477,
+      "Std": 0.4189641790598063
+    },
+    {
+      "Model": "Random Forest",
+      "Metric": "Precision",
+      "Mean": 74.10328687593385,
+      "Std": 0.39371022028505004
+    },
+    {
+      "Model": "Random Forest",
+      "Metric": "Recall",
+      "Mean": 69.3476660285672,
+      "Std": 0.7684471647379425
+    },
+    {
+      "Model": "Random Forest",
+      "Metric": "F1 Score",
+      "Mean": 71.6452109353979,
+      "Std": 0.5165221600528774
+    },
+    {
+      "Model": "Random Forest",
+      "Metric": "ROC-AUC",
+      "Mean": 79.18221094135653,
+      "Std": 0.3010294066316829
+    },
+    {
+      "Model": "Random Forest",
+      "Metric": "PR-AUC",
+      "Mean": 77.55120939651394,
+      "Std": 0.39674224385989376
+    },
+    {
+      "Model": "XGBoost (default)",
+      "Metric": "Accuracy",
+      "Mean": 73.58015449174219,
+      "Std": 0.38499880034025846
+    },
+    {
+      "Model": "XGBoost (default)",
+      "Metric": "Precision",
+      "Mean": 75.45483962401647,
+      "Std": 0.4724019852940598
+    },
+    {
+      "Model": "XGBoost (default)",
+      "Metric": "Recall",
+      "Mean": 69.06493888970697,
+      "Std": 0.4775426955172933
+    },
+    {
+      "Model": "XGBoost (default)",
+      "Metric": "F1 Score",
+      "Mean": 72.11794679186781,
+      "Std": 0.40830785788950336
+    },
+    {
+      "Model": "XGBoost (default)",
+      "Metric": "ROC-AUC",
+      "Mean": 80.13617694416375,
+      "Std": 0.3018061912342412
+    },
+    {
+      "Model": "XGBoost (default)",
+      "Metric": "PR-AUC",
+      "Mean": 78.34047908680404,
+      "Std": 0.3980388291372449
+    }
+  ],
+  "roc_auc_bootstrap_ci": [
+    {
+      "Model": "Logistic Regression",
+      "ROC-AUC": 0.796,
+      "95% CI low": 0.7885,
+      "95% CI high": 0.8033
+    },
+    {
+      "Model": "Random Forest",
+      "ROC-AUC": 0.7961,
+      "95% CI low": 0.7888,
+      "95% CI high": 0.8037
+    },
+    {
+      "Model": "XGBoost (default)",
+      "ROC-AUC": 0.8056,
+      "95% CI low": 0.7984,
+      "95% CI high": 0.8132
+    },
+    {
+      "Model": "XGBoost (tuned)",
+      "ROC-AUC": 0.8063,
+      "95% CI low": 0.7991,
+      "95% CI high": 0.8139
+    }
+  ],
+  "paired_auc_differences": [
+    {
+      "Comparison": "XGBoost (default) - Logistic Regression",
+      "Mean diff": 0.0097,
+      "95% CI low": 0.0071,
+      "95% CI high": 0.0122,
+      "Verdict": "difference is distinguishable from 0"
+    },
+    {
+      "Comparison": "XGBoost (default) - Random Forest",
+      "Mean diff": 0.0095,
+      "95% CI low": 0.0069,
+      "95% CI high": 0.0122,
+      "Verdict": "difference is distinguishable from 0"
+    },
+    {
+      "Comparison": "XGBoost (tuned) - XGBoost (default)",
+      "Mean diff": 0.0006,
+      "95% CI low": -0.0002,
+      "95% CI high": 0.0015,
+      "Verdict": "CI includes 0 (not distinguishable)"
+    }
+  ],
+  "calibration": [
+    {
+      "Model": "XGBoost (tuned)",
+      "Brier score": 0.1782,
+      "ECE": 0.0127
+    },
+    {
+      "Model": "XGBoost (tuned) + isotonic",
+      "Brier score": 0.1782,
+      "ECE": 0.0088
+    }
+  ],
+  "threshold_tradeoff": [
+    {
+      "Setting": "default 0.5",
+      "Threshold": 0.5,
+      "Recall": 0.691,
+      "Precision": 0.756,
+      "Specificity": 0.782,
+      "Missed patients (FN)": 2097,
+      "False alarms (FP)": 1513
+    },
+    {
+      "Setting": "target recall 70%",
+      "Threshold": 0.49,
+      "Recall": 0.702,
+      "Precision": 0.748,
+      "Specificity": 0.768,
+      "Missed patients (FN)": 2025,
+      "False alarms (FP)": 1608
+    },
+    {
+      "Setting": "target recall 75%",
+      "Threshold": 0.437,
+      "Recall": 0.752,
+      "Precision": 0.72,
+      "Specificity": 0.713,
+      "Missed patients (FN)": 1685,
+      "False alarms (FP)": 1989
+    },
+    {
+      "Setting": "target recall 80%",
+      "Threshold": 0.381,
+      "Recall": 0.804,
+      "Precision": 0.686,
+      "Specificity": 0.64,
+      "Missed patients (FN)": 1330,
+      "False alarms (FP)": 2500
+    },
+    {
+      "Setting": "target recall 85%",
+      "Threshold": 0.322,
+      "Recall": 0.849,
+      "Precision": 0.657,
+      "Specificity": 0.567,
+      "Missed patients (FN)": 1026,
+      "False alarms (FP)": 3006
+    },
+    {
+      "Setting": "target recall 90%",
+      "Threshold": 0.272,
+      "Recall": 0.907,
+      "Precision": 0.615,
+      "Specificity": 0.445,
+      "Missed patients (FN)": 633,
+      "False alarms (FP)": 3851
+    }
+  ],
+  "subgroups": [
+    {
+      "Group type": "Gender",
+      "Group": "Gender code 1",
+      "n (test)": 8922,
+      "CVD rate": 0.494,
+      "ROC-AUC": 0.81,
+      "Recall": 0.804,
+      "Precision": 0.693,
+      "Specificity": 0.651
+    },
+    {
+      "Group type": "Gender",
+      "Group": "Gender code 2",
+      "n (test)": 4805,
+      "CVD rate": 0.495,
+      "ROC-AUC": 0.8,
+      "Recall": 0.805,
+      "Precision": 0.674,
+      "Specificity": 0.618
+    },
+    {
+      "Group type": "Age group",
+      "Group": "<40",
+      "n (test)": 346,
+      "CVD rate": 0.225,
+      "ROC-AUC": 0.85,
+      "Recall": 0.641,
+      "Precision": 0.794,
+      "Specificity": 0.951
+    },
+    {
+      "Group type": "Age group",
+      "Group": "40-49",
+      "n (test)": 3914,
+      "CVD rate": 0.37,
+      "ROC-AUC": 0.831,
+      "Recall": 0.675,
+      "Precision": 0.741,
+      "Specificity": 0.861
+    },
+    {
+      "Group type": "Age group",
+      "Group": "50-59",
+      "n (test)": 6872,
+      "CVD rate": 0.514,
+      "ROC-AUC": 0.769,
+      "Recall": 0.778,
+      "Precision": 0.666,
+      "Specificity": 0.587
+    },
+    {
+      "Group type": "Age group",
+      "Group": "60-64",
+      "n (test)": 2595,
+      "CVD rate": 0.667,
+      "ROC-AUC": 0.733,
+      "Recall": 0.974,
+      "Precision": 0.687,
+      "Specificity": 0.113
+    }
+  ]
+}
