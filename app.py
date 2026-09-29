@@ -556,6 +556,47 @@ elif page == "🩺 Risk Assessment":
     )
 
     # ========================================================
+    # QUICK DEMO PROFILES (fill the form with one click)
+    # ========================================================
+
+    def _clamp(v, lo, hi):
+        return min(max(v, lo), hi)
+
+    PROFILES = {
+        "🟢 Low-risk example": dict(
+            in_age=35, in_gender=1, in_height=170, in_weight=65.0,
+            in_ap_hi=110, in_ap_lo=70, in_chol=1, in_gluc=1,
+            in_smoke=0, in_alco=0, in_active=1),
+        "🟡 Borderline example": dict(
+            in_age=52, in_gender=2, in_height=172, in_weight=82.0,
+            in_ap_hi=130, in_ap_lo=85, in_chol=2, in_gluc=1,
+            in_smoke=0, in_alco=0, in_active=0),
+        "🔴 High-risk example": dict(
+            in_age=62, in_gender=1, in_height=160, in_weight=92.0,
+            in_ap_hi=165, in_ap_lo=100, in_chol=3, in_gluc=3,
+            in_smoke=1, in_alco=0, in_active=0),
+    }
+
+    DEFAULT_INPUTS = dict(
+        in_age=_clamp(55, age_lo, age_hi), in_gender=1,
+        in_height=_clamp(165, h_lo, h_hi), in_weight=_clamp(75.0, w_lo, w_hi),
+        in_ap_hi=_clamp(140, sbp_lo, sbp_hi), in_ap_lo=_clamp(85, dbp_lo, dbp_hi),
+        in_chol=1, in_gluc=1, in_smoke=0, in_alco=0, in_active=1)
+
+    for _k, _v in DEFAULT_INPUTS.items():
+        st.session_state.setdefault(_k, _v)
+
+    def load_profile(name):
+        for _k, _v in PROFILES[name].items():
+            st.session_state[_k] = _v
+
+    st.markdown("**Quick demo profiles** - fill the form with one click")
+    pcols = st.columns(len(PROFILES))
+    for _col, _name in zip(pcols, PROFILES):
+        _col.button(_name, on_click=load_profile, args=(_name,),
+                    use_container_width=True)
+
+    # ========================================================
     # DEMOGRAPHICS
     # ========================================================
 
@@ -575,7 +616,7 @@ elif page == "🩺 Risk Assessment":
             "Age (years)",
             min_value=age_lo,
             max_value=age_hi,
-            value=min(max(55, age_lo), age_hi),
+            key="in_age",
             step=1
         )
 
@@ -585,6 +626,7 @@ elif page == "🩺 Risk Assessment":
         gender = st.selectbox(
             "Gender code",
             [1, 2],
+            key="in_gender",
             format_func=lambda x: f"Code {x}",
             help="The public dataset does not state which code is female "
                  "and which is male."
@@ -595,7 +637,7 @@ elif page == "🩺 Risk Assessment":
             "Height (cm)",
             min_value=h_lo,
             max_value=h_hi,
-            value=min(max(165, h_lo), h_hi),
+            key="in_height",
             step=1
         )
 
@@ -604,7 +646,7 @@ elif page == "🩺 Risk Assessment":
             "Weight (kg)",
             min_value=w_lo,
             max_value=w_hi,
-            value=min(max(75.0, w_lo), w_hi),
+            key="in_weight",
             step=0.1
         )
 
@@ -632,7 +674,7 @@ elif page == "🩺 Risk Assessment":
             "Systolic Blood Pressure (mmHg)",
             min_value=sbp_lo,
             max_value=sbp_hi,
-            value=min(max(140, sbp_lo), sbp_hi),
+            key="in_ap_hi",
             step=1
         )
 
@@ -641,7 +683,7 @@ elif page == "🩺 Risk Assessment":
             "Diastolic Blood Pressure (mmHg)",
             min_value=dbp_lo,
             max_value=dbp_hi,
-            value=min(max(85, dbp_lo), dbp_hi),
+            key="in_ap_lo",
             step=1
         )
 
@@ -649,6 +691,7 @@ elif page == "🩺 Risk Assessment":
         cholesterol = st.selectbox(
             "Cholesterol",
             [1, 2, 3],
+            key="in_chol",
             format_func=lambda x: LEVEL_LABELS[x]
         )
 
@@ -656,6 +699,7 @@ elif page == "🩺 Risk Assessment":
         gluc = st.selectbox(
             "Glucose",
             [1, 2, 3],
+            key="in_gluc",
             format_func=lambda x: LEVEL_LABELS[x]
         )
 
@@ -682,6 +726,7 @@ elif page == "🩺 Risk Assessment":
         smoke = st.selectbox(
             "Smoking",
             [0, 1],
+            key="in_smoke",
             format_func=lambda x: "No" if x == 0 else "Yes"
         )
 
@@ -689,6 +734,7 @@ elif page == "🩺 Risk Assessment":
         alco = st.selectbox(
             "Alcohol Consumption",
             [0, 1],
+            key="in_alco",
             format_func=lambda x: "No" if x == 0 else "Yes"
         )
 
@@ -696,7 +742,7 @@ elif page == "🩺 Risk Assessment":
         active = st.selectbox(
             "Physical Activity",
             [0, 1],
-            index=1,
+            key="in_active",
             format_func=lambda x: "No" if x == 0 else "Yes"
         )
 
