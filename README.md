@@ -128,8 +128,8 @@ cardiorisk-ai/
 
 ```bash
 # 1. Clone
-git clone https://github.com/aimanbabar047-hash/cardiorisk-ai.git
-cd cardiorisk-ai
+git clone https://github.com/aimanbabar047-hash/cardio-risk-ai.git
+cd cardio-risk-ai
 
 # 2. Create a virtual environment
 python -m venv .venv
