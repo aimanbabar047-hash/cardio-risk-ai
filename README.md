@@ -109,9 +109,9 @@ Raw dataset (70,000 records)
 ## 🗂️ Project structure
 
 ```
-cardiorisk-ai/
+cardio-risk-ai/
 ├── app.py                                  # Streamlit application
-├── Cardiovascular_Disease_data_analysis_updated.ipynb   # EDA, training, evaluation
+├── Cardiovascular_Disease_data_analysis.ipynb   # EDA, training, evaluation
 ├── requirements.txt
 ├── README.md
 ├── assets/                                 # screenshots used in this README
